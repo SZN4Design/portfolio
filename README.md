@@ -40,3 +40,15 @@ sabrina@szn4.design
 
 FormSubmit may send a one-time activation email to that address after the first test.
 Confirm it before relying on the form publicly.
+
+
+## About-page asset-path fix
+
+This version fixes the Vercel `/about-me` issue by:
+- using `/about-me/styles.css`
+- using `/about-me/script.js`
+- using `/about-me/assets/...` for all About images
+- enabling trailing-slash routing in `vercel.json`
+
+This prevents the About page from accidentally loading the welcome page's root CSS
+and prevents image requests from incorrectly going to `/assets/...`.
